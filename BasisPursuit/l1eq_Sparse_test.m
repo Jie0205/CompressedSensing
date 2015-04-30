@@ -9,13 +9,6 @@
 
 % put key subdirectories in path if not already there
 path(path, './Optimization');
-path(path, './Data');
-
-% To reproduce the example in the documentation, uncomment the 
-% two lines below
-%load RandomStates
-%rand('state', rand_state);
-%randn('state', randn_state);
 
 % signal length
 N = 200;
