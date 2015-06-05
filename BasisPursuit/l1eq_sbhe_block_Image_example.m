@@ -1,5 +1,4 @@
-function [t1, t, img_psnr] = l1eq_block_Image_example(filename, subrate)
-
+function [t1, t, img_psnr] = l1eq_sbhe_block_Image_example(filename, subrate)
 original_img = double(imread(filename));
 % Block size 
 B = 32;
@@ -12,11 +11,10 @@ num_trials = 1; % the number of the processing to the image
 
 N = B* B;
 K = ceil(N * subrate);
-% measurement matrix
 tic
+% measurement matrix
 disp('Creating measurment matrix...');
-Phi = randn(K, N);
-Phi = orth(Phi')';
+Phi=sbhe(B, B, K);
 disp('Done.');
 t1 = toc;
 % dct_basis
